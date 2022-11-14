@@ -1,0 +1,31 @@
+<h2>Top Courses at Georgio institute:</h2>
+
+<nav class="ul li">
+       <ul>
+           <li *ngFor="let course of courses">
+            <a  class="col-1-4" routerLink="/detail/{{course.id}}">
+                {{course.name}}
+            </a>
+           </li>
+       </ul> 
+</nav>
+
+<app-course-detail [course]="selectedCourse"></app-course-detail>
+
+<div>
+    <label> Course name :
+        <input [(ngModel)]="coursename" placeholder="name" >
+    </label>
+</div>
+
+<div class="play-container">
+    <h2>Breweries</h2> 
+    
+    <ul *ngIf="beers">
+        <li *ngFor="let b of beers">
+            <p class="name">{{b.name}}</p>
+            <p class="city">{{b.city}} ( {{b.state}} )</p>
+        </li>
+    </ul>
+</div>
+  

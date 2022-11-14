@@ -1,0 +1,21 @@
+.play-container {
+
+    padding: 1em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+
+    input: {
+        padding: 1em;
+        margin-bottom: 1em
+    }
+
+}
+.active {
+  background-color: darkseagreen;
+}
+.notactive{
+    background-color: lightsalmon;
+}
+.oder {
+    background-color: aquamarine;
+}

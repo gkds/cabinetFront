@@ -1,0 +1,11 @@
+.btn-left{
+    align: left;
+}
+
+ul{
+    list-style-type: none;
+}   
+.nav-item{
+    margin: left 20px;
+    margin-right: 20px;
+}

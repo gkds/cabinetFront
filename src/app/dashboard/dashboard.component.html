@@ -1,0 +1,52 @@
+<br/><br/>
+
+
+<ng-template #admin [ngIf]="role_admin" >
+    <p>I am Administrator</p>
+    <h3> Liste doctors</h3>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Login</th>
+                    <th scope="col">Specialité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of doctors" >
+                    <td> <a class="link">{{d.id}}</a></td>
+                    <td> {{d.name}}</td>
+                    <td> {{d.login}}</td>
+                    <td>{{d.specialite}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <br />
+        <button class="btn btn-outline-primary" (click)="addNew();">Add new doctor</button>
+       
+
+</ng-template>
+
+<div class="play-container" [hidden]="role_admin">
+<p>You have click on this <button (click)="onClick()">Click me</button> {{counter}} times </p> 
+
+<div class="play-container" [class.active]="counter > 6">
+
+<ng-template [ngIf]="counter > 4" [ngIfElse]="none">
+ <p [style.backgroundColor]="yellow"> the button has been clicked <strong>than 4 times</strong> </p>
+
+</ng-template>
+<ng-template #none>
+    <p>the button is clicked less than 4 times</p>
+</ng-template>
+</div>
+
+<div class="play-container" [ngClass]="setClasses()">
+ test of dynamic css classs selection
+</div>
+</div>

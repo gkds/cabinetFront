@@ -1,0 +1,79 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+
+  .nav{
+    display: flex
+  }
+  
+</style>
+
+<!-- Toolbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <span class="navbar-brand" href="#"><h2>Cabinet Medical </h2> </span>
+  
+ <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  -->
+  <div class="navbar" id="navbarText" *ngIf="authService.user$ | async as user;">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/newpatient">Patients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/dossiers">Dossiers médicaux</a>
+      </li>
+    </ul>
+
+    <span class="navbar-text">
+      Bonjour {{user.fullname }} &nbsp;
+    </span>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-primary " (click)="logout()">Log out</button>
+    </form>
+   
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
