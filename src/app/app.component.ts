@@ -42,8 +42,7 @@ export class AppComponent implements OnInit {
       .pipe(finalize(() => (this.busy = false)))
       .subscribe(
         () => {
-    this.router.navigate(['login'], {});
-
+                this.router.navigate(['login'], {});
         },
         () => {
           this.loginError = true;

@@ -6,6 +6,7 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+  console.log('WWW mode production enabled')
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
@@ -13,8 +14,6 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
   enum colors {Green,Red, Blue=10};
 
-  //console.log('>>'+ colors.Green)
- // console.log('>>>'+ colors.Red)
   console.log('>>>>'+ colors.Blue)
 
   // Union type
